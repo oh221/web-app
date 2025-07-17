@@ -1,0 +1,209 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Products - Potato Company{% endblock %}
+
+{% block content %}
+<section class="py-8">
+    <h1 class="text-4xl font-bold text-center mb-6 text-gray-900">Our Premium Potato Varieties</h1>
+    <p class="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-10">
+        Discover our diverse selection of fresh potatoes, carefully cultivated to meet the highest standards of quality and taste.
+    </p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        {% for product in products %}
+        <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-102 transition-transform duration-300">
+            <img src="{{ product.image }}" alt="{{ product.name }}" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h2 class="text-2xl font-semibold mb-2 text-green-700">{{ product.name }}</h2>
+                <p class="text-gray-700 mb-4">{{ product.description }}</p>
+                <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+                    {% for feature in product.features %}
+                        <li>{{ feature }}</li>
+                    {% endfor %}
+                </ul>
+                <button onclick="openQuoteModal('{{ product.name }}')" class="mt-4 btn-primary text-sm">Request Quote</button>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center text-gray-600 col-span-full">No products available at the moment. Please check back soon!</p>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Quote Request Form Section -->
+<section class="py-12 bg-white rounded-lg shadow-md mb-8">
+    <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">Request a Custom Quote</h2>
+    <p class="text-center text-gray-600 mb-6">Fill out the form below to get a personalized quote for your bulk potato order.</p>
+
+    <form id="quote-request-form" class="max-w-2xl mx-auto p-6 bg-gray-50 rounded-lg shadow-inner">
+        {% csrf_token %}
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+                <label for="{{ quote_form.company_name.id_for_label }}" class="block text-gray-700 text-sm font-bold mb-2">Company Name</label>
+                {{ quote_form.company_name }}
+                {% if quote_form.company_name.errors %}<p class="text-red-500 text-xs italic mt-1">{{ quote_form.company_name.errors }}</p>{% endif %}
+            </div>
+            <div>
+                <label for="{{ quote_form.contact_person.id_for_label }}" class="block text-gray-700 text-sm font-bold mb-2">Contact Person</label>
+                {{ quote_form.contact_person }}
+                {% if quote_form.contact_person.errors %}<p class="text-red-500 text-xs italic mt-1">{{ quote_form.contact_person.errors }}</p>{% endif %}
+            </div>
+            <div>
+                <label for="{{ quote_form.email.id_for_label }}" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                {{ quote_form.email }}
+                {% if quote_form.email.errors %}<p class="text-red-500 text-xs italic mt-1">{{ quote_form.email.errors }}</p>{% endif %}
+            </div>
+            <div>
+                <label for="{{ quote_form.phone.id_for_label }}" class="block text-gray-700 text-sm font-bold mb-2">Phone</label>
+                {{ quote_form.phone }}
+                {% if quote_form.phone.errors %}<p class="text-red-500 text-xs italic mt-1">{{ quote_form.phone.errors }}</p>{% endif %}
+            </div>
+            <div>
+                <label for="{{ quote_form.variety.id_for_label }}" class="block text-gray-700 text-sm font-bold mb-2">Potato Variety</label>
+                {{ quote_form.variety }}
+                {% if quote_form.variety.errors %}<p class="text-red-500 text-xs italic mt-1">{{ quote_form.variety.errors }}</p>{% endif %}
+            </div>
+            <div>
+                <label for="{{ quote_form.quantity_range.id_for_label }}" class="block text-gray-700 text-sm font-bold mb-2">Quantity Range</label>
+                {{ quote_form.quantity_range }}
+                {% if quote_form.quantity_range.errors %}<p class="text-red-500 text-xs italic mt-1">{{ quote_form.quantity_range.errors }}</p>{% endif %}
+            </div>
+            <div class="md:col-span-2">
+                <label for="{{ quote_form.delivery_location.id_for_label }}" class="block text-gray-700 text-sm font-bold mb-2">Delivery Location</label>
+                {{ quote_form.delivery_location }}
+                {% if quote_form.delivery_location.errors %}<p class="text-red-500 text-xs italic mt-1">{{ quote_form.delivery_location.errors }}</p>{% endif %}
+            </div>
+            <div class="md:col-span-2">
+                <label for="{{ quote_form.delivery_date.id_for_label }}" class="block text-gray-700 text-sm font-bold mb-2">Preferred Delivery Date</label>
+                {{ quote_form.delivery_date }}
+                {% if quote_form.delivery_date.errors %}<p class="text-red-500 text-xs italic mt-1">{{ quote_form.delivery_date.errors }}</p>{% endif %}
+                <p class="text-gray-600 text-xs mt-1">{{ quote_form.delivery_date.help_text }}</p>
+            </div>
+            <div class="md:col-span-2">
+                <label for="{{ quote_form.additional_requirements.id_for_label }}" class="block text-gray-700 text-sm font-bold mb-2">Additional Requirements (Optional)</label>
+                {{ quote_form.additional_requirements }}
+                {% if quote_form.additional_requirements.errors %}<p class="text-red-500 text-xs italic mt-1">{{ quote_form.additional_requirements.errors }}</p>{% endif %}
+            </div>
+        </div>
+        <div class="flex items-center justify-center">
+            <button type="submit" class="btn-primary w-full md:w-auto" id="quote-submit-btn">Submit Request</button>
+        </div>
+        <div id="quote-message" class="mt-4 text-center text-sm font-medium"></div>
+    </form>
+</section>
+
+<!-- Quote Modal (Hidden by default) -->
+<div id="quote-modal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50 hidden">
+    <div class="bg-white p-8 rounded-lg shadow-xl max-w-md w-full">
+        <h3 class="text-2xl font-bold mb-4 text-gray-900">Request Quote for <span id="modal-product-name" class="text-green-700"></span></h3>
+        <p class="text-gray-700 mb-6">Please fill out the form to get a quote for your selected product.</p>
+        <div class="flex justify-end">
+            <button onclick="closeQuoteModal()" class="btn-secondary">Close</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Function to open the quote modal and pre-fill the variety if a product is selected
+    function openQuoteModal(productName = '') {
+        const modal = document.getElementById('quote-modal');
+        const modalProductName = document.getElementById('modal-product-name');
+        const varietySelect = document.getElementById('{{ quote_form.variety.id_for_label }}');
+
+        if (productName) {
+            modalProductName.textContent = productName;
+            // Attempt to pre-select the variety in the form
+            const lowerCaseProductName = productName.toLowerCase().replace(/\s/g, ''); // Convert to match model choices
+            for (let i = 0; i < varietySelect.options.length; i++) {
+                if (varietySelect.options[i].value === lowerCaseProductName) {
+                    varietySelect.value = lowerCaseProductName;
+                    break;
+                }
+            }
+        } else {
+            modalProductName.textContent = 'Selected Variety'; // Default text if no specific product
+            varietySelect.value = ''; // Reset variety if modal opened generally
+        }
+        modal.classList.remove('hidden');
+    }
+
+    // Function to close the quote modal
+    function closeQuoteModal() {
+        document.getElementById('quote-modal').classList.add('hidden');
+    }
+
+    // Handle quote request form submission
+    document.getElementById('quote-request-form').addEventListener('submit', async function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const form = event.target;
+        const formData = new FormData(form);
+        const jsonData = {};
+        formData.forEach((value, key) => {
+            jsonData[key] = value;
+        });
+        // Convert delivery_date to 'YYYY-MM-DD' format if it's not already
+        if (jsonData.delivery_date) {
+            const dateObj = new Date(jsonData.delivery_date);
+            jsonData.delivery_date = dateObj.toISOString().split('T')[0];
+        }
+
+        const messageDiv = document.getElementById('quote-message');
+        const submitBtn = document.getElementById('quote-submit-btn');
+
+        messageDiv.className = 'mt-4 text-center text-sm font-medium'; // Reset classes
+        messageDiv.textContent = 'Submitting request...';
+        submitBtn.disabled = true; // Disable button during submission
+
+        try {
+            const response = await fetch('{% url "main:quote_request" %}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+                },
+                body: JSON.stringify(jsonData)
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                messageDiv.textContent = data.message;
+                messageDiv.classList.add('text-green-600');
+                form.reset(); // Clear form on success
+                closeQuoteModal(); // Close modal on success
+            } else {
+                messageDiv.textContent = data.message || 'An unknown error occurred.';
+                messageDiv.classList.add('text-red-600');
+                // Display individual field errors if available
+                if (data.errors) {
+                    for (const field in data.errors) {
+                        const errorElement = document.querySelector(`#${field} + .text-red-500.text-xs.italic`);
+                        if (errorElement) {
+                            errorElement.textContent = data.errors[field][0];
+                        } else {
+                             // Create a new error paragraph if it doesn't exist
+                            const inputElement = document.getElementById(form[field].id);
+                            if (inputElement) {
+                                const newError = document.createElement('p');
+                                newError.className = 'text-red-500 text-xs italic mt-1';
+                                newError.textContent = data.errors[field][0];
+                                inputElement.parentNode.insertBefore(newError, inputElement.nextSibling);
+                            }
+                        }
+                    }
+                }
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            messageDiv.textContent = 'Failed to submit request due to a network error.';
+            messageDiv.classList.add('text-red-600');
+        } finally {
+            submitBtn.disabled = false; // Re-enable button
+        }
+    });
+</script>
+{% endblock %}

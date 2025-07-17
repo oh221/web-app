@@ -1,0 +1,64 @@
+{% extends 'main/base.html' %}
+
+{% block title %}About Us - Potato Company{% endblock %}
+
+{% block content %}
+<section class="py-12 bg-white rounded-lg shadow-md mb-8">
+    <h1 class="text-4xl font-bold text-center mb-6 text-gray-900">Our Story</h1>
+    <p class="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-10">
+        Welcome to Potato Company, where passion for potatoes meets unparalleled quality.
+        For over {{ company_stats.years_experience }} years, we have been dedicated to
+        cultivating and delivering the finest potato varieties to families, restaurants,
+        and businesses across the globe. Our commitment to sustainable farming,
+        rigorous quality control, and exceptional customer service sets us apart.
+    </p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center mt-10">
+        <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-green-100 transform hover:scale-105 transition-transform duration-300">
+            <i class="fas fa-chart-line text-4xl text-green-600 mb-3"></i>
+            <h3 class="text-3xl font-bold text-gray-900">{{ company_stats.years_experience }}+</h3>
+            <p class="text-gray-600 text-sm">Years of Experience</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-green-100 transform hover:scale-105 transition-transform duration-300">
+            <i class="fas fa-users text-4xl text-green-600 mb-3"></i>
+            <h3 class="text-3xl font-bold text-gray-900">{{ company_stats.satisfied_customers }}+</h3>
+            <p class="text-gray-600 text-sm">Satisfied Customers</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-green-100 transform hover:scale-105 transition-transform duration-300">
+            <i class="fas fa-seedling text-4xl text-green-600 mb-3"></i>
+            <h3 class="text-3xl font-bold text-gray-900">{{ company_stats.varieties_available }}+</h3>
+            <p class="text-gray-600 text-sm">Varieties Available</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-green-100 transform hover:scale-105 transition-transform duration-300">
+            <i class="fas fa-globe-americas text-4xl text-green-600 mb-3"></i>
+            <h3 class="text-3xl font-bold text-gray-900">{{ company_stats.countries_served }}+</h3>
+            <p class="text-gray-600 text-sm">Countries Served</p>
+        </div>
+    </div>
+</section>
+
+<section class="py-12">
+    <h2 class="text-3xl font-bold text-center mb-8 text-gray-900">Our Mission & Values</h2>
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <h3 class="text-2xl font-semibold mb-4 text-green-700">Mission</h3>
+            <p class="text-gray-700">
+                To be the leading provider of fresh, high-quality potatoes,
+                fostering sustainable agricultural practices and building lasting
+                relationships with our customers and partners. We aim to nourish
+                communities with wholesome, delicious produce.
+            </p>
+        </div>
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <h3 class="text-2xl font-semibold mb-4 text-green-700">Values</h3>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li><strong class="text-gray-800">Quality:</strong> Uncompromising standards from farm to table.</li>
+                <li><strong class="text-gray-800">Sustainability:</strong> Eco-friendly farming and responsible resource management.</li>
+                <li><strong class="text-gray-800">Integrity:</strong> Honest and transparent dealings with all stakeholders.</li>
+                <li><strong class="text-gray-800">Customer Focus:</strong> Dedicated to meeting and exceeding customer expectations.</li>
+                <li><strong class="text-gray-800">Innovation:</strong> Continuously improving our processes and offerings.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Quality Potatoes - Potato Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #16a34a;
+            --primary-dark: #15803d;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .gradient-primary {
+            background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+        }
+        
+        .container-custom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .section-padding {
+            padding: 5rem 0;
+        }
+        
+        .btn-primary {
+            @apply inline-flex items-center justify-center px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+        }
+        
+        .btn-outline {
+            @apply inline-flex items-center justify-center px-8 py-3 rounded-full font-semibold border-2 transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+        }
+        
+        .card-feature {
+            @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2;
+        }
+        
+        .card-product {
+            @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden;
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <div class="container-custom">
+            <div class="flex items-center justify-between py-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-seedling text-white text-lg"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-900">Potato Co.</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-green-600 transition-colors">Home</a>
+                    <a href="/about" class="text-gray-700 hover:text-green-600 transition-colors">About</a>
+                    <a href="/products" class="text-gray-700 hover:text-green-600 transition-colors">Products</a>
+                    <a href="/services" class="text-gray-700 hover:text-green-600 transition-colors">Services</a>
+                    <a href="/contact" class="text-gray-700 hover:text-green-600 transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden">
+                    <i class="fas fa-bars text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative gradient-primary text-white overflow-hidden mt-16">
+        <div class="absolute inset-0 bg-black opacity-10"></div>
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-green-600/90 to-green-700/80"></div>
+            <!-- Decorative Elements -->
+            <div class="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl floating-animation"></div>
+            <div class="absolute bottom-20 right-10 w-48 h-48 bg-white/5 rounded-full blur-2xl floating-animation" style="animation-delay: -3s;"></div>
+        </div>
+        
+        <div class="relative container-custom section-padding text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight" data-aos="fade-up">
+                    Premium <span class="text-yellow-300">Potatoes</span><br>
+                    <span class="text-3xl md:text-5xl font-normal">Delivered Fresh to Your Door</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+                    Your trusted partner for exceptional quality potatoes, sustainable farming practices, and outstanding customer service.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
+                    <a href="#products" class="btn-primary bg-white text-green-700 hover:bg-gray-100 px-10 py-4 text-lg">
+                        <i class="fas fa-seedling mr-2"></i>
+                        Explore Products
+                    </a>
+                    <a href="#contact" class="btn-outline border-white text-white hover:bg-white hover:text-green-700 px-10 py-4 text-lg">
+                        <i class="fas fa-phone mr-2"></i>
+                        Get Quote
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <i class="fas fa-chevron-down text-white/70 text-2xl"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-white relative">
+        <div class="container-custom">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="group" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="bg-green-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-100 transition-colors duration-300">
+                        <i class="fas fa-chart-line text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-gray-900 mb-2">15+</h3>
+                    <p class="text-gray-600 font-medium">Years Experience</p>
+                </div>
+                <div class="group" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="bg-green-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-100 transition-colors duration-300">
+                        <i class="fas fa-users text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-gray-900 mb-2">500+</h3>
+                    <p class="text-gray-600 font-medium">Happy Customers</p>
+                </div>
+                <div class="group" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="bg-green-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-100 transition-colors duration-300">
+                        <i class="fas fa-seedling text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-gray-900 mb-2">5+</h3>
+                    <p class="text-gray-600 font-medium">Varieties Available</p>
+                </div>
+                <div class="group" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="bg-green-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-100 transition-colors duration-300">
+                        <i class="fas fa-globe text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-gray-900 mb-2">10+</h3>
+                    <p class="text-gray-600 font-medium">Countries Served</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="about" class="section-padding bg-gray-50">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6" data-aos="fade-up">
+                    Why Choose <span class="text-green-600">Potato Co.</span>?
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    Discover what sets us apart in the industry and why customers trust us for their potato needs.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-feature p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-leaf text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-900">Premium Quality</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Sourced from the finest farms with rigorous quality control processes to ensure exceptional taste and freshness in every delivery.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Grade A Certification
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Farm-to-Table Traceability
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Sustainable Farming
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card-feature p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-truck-fast text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-900">Reliable Delivery</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Advanced logistics network ensuring timely and efficient delivery services with real-time tracking and temperature control.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Same-Day Delivery Available
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Temperature Controlled
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Real-Time Tracking
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card-feature p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-handshake text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-900">Customer Excellence</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Dedicated support team providing personalized service, flexible solutions, and comprehensive after-sales support.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            24/7 Customer Support
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Custom Solutions
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Satisfaction Guarantee
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Preview -->
+    <section id="products" class="section-padding bg-white">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6" data-aos="fade-up">
+                    Our <span class="text-green-600">Premium</span> Varieties
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    Carefully selected potato varieties to meet all your culinary and commercial needs.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-product" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-64 bg-gradient-to-br from-yellow-100 to-yellow-200 flex items-center justify-center">
+                        <i class="fas fa-seedling text-6xl text-yellow-600"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Russet Burbank</h3>
+                        <p class="text-gray-600 mb-6">
+                            Perfect for baking, frying, and mashing. High starch content makes these ideal for commercial use and home cooking.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-green-600">From $2.99/lb</span>
+                            <button class="btn-primary bg-green-600 text-white hover:bg-green-700 px-6 py-2">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-product" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-64 bg-gradient-to-br from-red-100 to-red-200 flex items-center justify-center">
+                        <i class="fas fa-seedling text-6xl text-red-600"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Red Potatoes</h3>
+                        <p class="text-gray-600 mb-6">
+                            Waxy texture perfect for boiling, roasting, and salads. Thin skin and creamy flesh make them versatile for any dish.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-green-600">From $3.49/lb</span>
+                            <button class="btn-primary bg-green-600 text-white hover:bg-green-700 px-6 py-2">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-product" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-64 bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center">
+                        <i class="fas fa-seedling text-6xl text-purple-600"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Purple Potatoes</h3>
+                        <p class="text-gray-600 mb-6">
+                            Antioxidant-rich with unique color and flavor. Perfect for gourmet dishes and health-conscious consumers.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-green-600">From $4.99/lb</span>
+                            <button class="btn-primary bg-green-600 text-white hover:bg-green-700 px-6 py-2">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="/products" class="btn-primary bg-green-600 text-white hover:bg-green-700 px-10 py-4 text-lg">
+                    <i class="fas fa-eye mr-2"></i>
+                    View All Products
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section-padding bg-gray-50">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6" data-aos="fade-up">
+                    What Our <span class="text-green-600">Customers</span> Say
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    Don't just take our word for it - hear from satisfied customers who trust us with their potato needs.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-green-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Sarah Johnson</h4>
+                            <p class="text-gray-600 text-sm">Restaurant Owner</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Potato Co. has been our reliable supplier for over 3 years. The quality is consistently excellent, and their delivery service is impeccable."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-green-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Michael Chen</h4>
+                            <p class="text-gray-600 text-sm">Grocery Chain Manager</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Outstanding quality control and competitive pricing. Their customer service team is always responsive and helpful with our bulk orders."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-green-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Emily Rodriguez</h4>
+                            <p class="text-gray-600 text-sm">Food Distributor</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "The variety and freshness of their potatoes is unmatched. We've built a strong partnership that continues to grow year after year."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-white">
+        <div class="container-custom">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+                        Get in <span class="text-green-600">Touch</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Ready to partner with us? Contact our team for quotes, product information, or any questions about our premium potato varieties.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-phone text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Phone</h4>
+                                <p class="text-gray-600">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Email</h4>
+                                <p class="text-gray-600">info@potatocompany.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Address</h4>
+                                <p class="text-gray-600">123 Farm Road, Agricultural District, State 12345</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-2xl" data-aos="fade-left">
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="Enter your name">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="Enter your email">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                            <input type="tel" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="Enter your phone">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="Tell us about your needs"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full btn-primary bg-green-600 text-white hover:bg-green-700 py-4 text-lg">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container-custom">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-seedling text-white text-lg"></i>
+                        </div>
+                        <span class="text-2xl font-bold">Potato Co.</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Your trusted partner for premium quality potatoes, delivered fresh from farm to table.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href
+                        <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-green-500 transition-colors">Home</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-green-500 transition-colors">Products</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-green-500 transition-colors">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-green-500 transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-500 transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Products</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-green-500 transition-colors">Russet Potatoes</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-500 transition-colors">Red Potatoes</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-500 transition-colors">Purple Potatoes</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-500 transition-colors">Yukon Gold</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-500 transition-colors">Fingerling</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe to our newsletter for the latest updates and special offers.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-3 rounded-l-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-green-500 w-full">
+                        <button type="submit" class="bg-green-600 hover:bg-green-700 px-4 rounded-r-lg transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    &copy; 2023 Potato Company. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-green-500 text-sm transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-green-500 text-sm transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-500 hover:text-green-500 text-sm transition-colors">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-green-600 rounded-full shadow-lg flex items-center justify-center text-white opacity-0 invisible transition-all duration-300 hover:bg-green-700">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS animation library
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Mobile menu toggle functionality would go here
+        // You would need to add the mobile menu HTML structure first
+    </script>
+</body>
+</html>

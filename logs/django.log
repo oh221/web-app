@@ -1,0 +1,529 @@
+INFO 2025-06-19 18:57:39,288 autoreload 6768 3820 Watching for file changes with StatReloader
+ERROR 2025-06-19 18:57:43,868 log 6768 10384 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'home' not found. 'home' is not a valid view function or pattern name.
+ERROR 2025-06-19 18:57:43,917 basehttp 6768 10384 "GET / HTTP/1.1" 500 148991
+INFO 2025-06-19 19:06:40,205 autoreload 5876 13388 Watching for file changes with StatReloader
+INFO 2025-06-19 19:06:42,383 basehttp 5876 12228 "GET / HTTP/1.1" 200 10629
+INFO 2025-06-19 19:06:53,475 basehttp 5876 12228 "GET / HTTP/1.1" 200 10629
+INFO 2025-06-19 19:07:08,353 basehttp 5876 12228 "GET / HTTP/1.1" 200 10629
+INFO 2025-06-19 19:07:18,902 basehttp 5876 12228 "GET /about/ HTTP/1.1" 200 7572
+INFO 2025-06-19 19:07:22,729 basehttp 5876 12228 "GET /about/ HTTP/1.1" 200 7572
+INFO 2025-06-19 19:08:26,270 basehttp 5876 12228 "GET /services/ HTTP/1.1" 200 7714
+INFO 2025-06-19 19:08:39,637 basehttp 5876 12228 "GET /contact/ HTTP/1.1" 200 8329
+INFO 2025-06-19 19:08:42,699 basehttp 5876 12228 "GET /contact/ HTTP/1.1" 200 8329
+INFO 2025-06-19 19:08:45,085 basehttp 5876 12228 "GET /products/ HTTP/1.1" 200 18585
+WARNING 2025-06-19 19:08:45,241 log 5876 4336 Not Found: /products/images/fingerling.jpg
+WARNING 2025-06-19 19:08:45,241 log 5876 976 Not Found: /products/images/red.jpg
+WARNING 2025-06-19 19:08:45,256 log 5876 17244 Not Found: /products/images/yukon.jpg
+WARNING 2025-06-19 19:08:45,256 basehttp 5876 4336 "GET /products/images/fingerling.jpg HTTP/1.1" 404 3401
+WARNING 2025-06-19 19:08:45,258 basehttp 5876 976 "GET /products/images/red.jpg HTTP/1.1" 404 3380
+WARNING 2025-06-19 19:08:45,268 log 5876 12228 Not Found: /products/images/russet.jpg
+WARNING 2025-06-19 19:08:45,269 basehttp 5876 17244 "GET /products/images/yukon.jpg HTTP/1.1" 404 3386
+WARNING 2025-06-19 19:08:45,273 log 5876 15424 Not Found: /products/images/sweet.jpg
+WARNING 2025-06-19 19:08:45,274 basehttp 5876 12228 "GET /products/images/russet.jpg HTTP/1.1" 404 3389
+WARNING 2025-06-19 19:08:45,275 basehttp 5876 15424 "GET /products/images/sweet.jpg HTTP/1.1" 404 3386
+INFO 2025-06-19 19:09:03,027 basehttp 5876 15424 "GET /contact/ HTTP/1.1" 200 8329
+INFO 2025-06-19 19:10:17,600 basehttp 5876 15424 "GET /contact/ HTTP/1.1" 200 8410
+INFO 2025-06-19 19:10:21,526 basehttp 5876 15424 "GET / HTTP/1.1" 200 10710
+INFO 2025-06-19 19:10:45,890 basehttp 5876 15424 "GET / HTTP/1.1" 200 10710
+INFO 2025-06-19 19:10:48,459 basehttp 5876 15424 "GET /about/ HTTP/1.1" 200 7653
+INFO 2025-06-19 19:11:13,467 basehttp 5876 15424 "GET / HTTP/1.1" 200 10710
+INFO 2025-06-19 19:11:19,108 basehttp 5876 15424 "GET /admin/ HTTP/1.1" 200 9793
+INFO 2025-06-19 19:11:19,185 basehttp 5876 15424 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-06-19 19:11:19,188 basehttp 5876 12228 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-06-19 19:11:19,191 basehttp 5876 17244 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-06-19 19:11:19,193 basehttp 5876 976 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-06-19 19:11:19,198 basehttp 5876 12228 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-06-19 19:11:19,199 basehttp 5876 15424 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-06-19 19:11:19,203 basehttp 5876 15424 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-06-19 19:11:19,234 basehttp 5876 12228 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-06-19 19:11:19,235 basehttp 5876 15424 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-06-19 19:11:19,235 basehttp 5876 976 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2025-06-22 17:27:30,482 autoreload 14428 12372 Watching for file changes with StatReloader
+INFO 2025-06-22 17:48:26,359 autoreload 2192 15160 Watching for file changes with StatReloader
+INFO 2025-06-22 18:07:02,974 autoreload 3176 6680 Watching for file changes with StatReloader
+INFO 2025-06-22 18:07:05,626 basehttp 3176 11844 "GET / HTTP/1.1" 200 10710
+WARNING 2025-06-22 18:07:06,509 log 3176 11844 Not Found: /favicon.ico
+WARNING 2025-06-22 18:07:06,509 basehttp 3176 11844 "GET /favicon.ico HTTP/1.1" 404 3344
+ERROR 2025-06-22 18:07:18,964 views 3176 11844 Newsletter signup error: no such table: main_newsletter
+INFO 2025-06-22 18:07:18,964 basehttp 3176 11844 "POST /api/newsletter-signup/ HTTP/1.1" 200 88
+INFO 2025-06-24 17:17:52,935 autoreload 76 18292 Watching for file changes with StatReloader
+ERROR 2025-06-24 17:17:58,047 log 76 6688 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 518, in parse
+    self.unclosed_block_tag(parse_until)
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 581, in unclosed_block_tag
+    raise self.error(token, msg)
+django.template.exceptions.TemplateSyntaxError: Unclosed tag on line 5: 'block'. Looking for one of: endblock.
+ERROR 2025-06-24 17:17:58,105 basehttp 76 6688 "GET / HTTP/1.1" 500 178643
+WARNING 2025-06-24 17:17:59,553 log 76 6688 Not Found: /favicon.ico
+WARNING 2025-06-24 17:17:59,558 basehttp 76 6688 "GET /favicon.ico HTTP/1.1" 404 3344
+INFO 2025-06-24 17:18:32,378 autoreload 17124 11768 Watching for file changes with StatReloader
+ERROR 2025-06-24 17:18:34,456 log 17124 5084 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 518, in parse
+    self.unclosed_block_tag(parse_until)
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 581, in unclosed_block_tag
+    raise self.error(token, msg)
+django.template.exceptions.TemplateSyntaxError: Unclosed tag on line 5: 'block'. Looking for one of: endblock.
+ERROR 2025-06-24 17:18:34,553 basehttp 17124 5084 "GET / HTTP/1.1" 500 178643
+INFO 2025-06-24 17:19:43,062 autoreload 7288 6632 Watching for file changes with StatReloader
+ERROR 2025-06-24 17:19:49,226 log 7288 16532 Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 518, in parse
+    self.unclosed_block_tag(parse_until)
+  File "C:\Users\omarh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 581, in unclosed_block_tag
+    raise self.error(token, msg)
+django.template.exceptions.TemplateSyntaxError: Unclosed tag on line 5: 'block'. Looking for one of: endblock.
+ERROR 2025-06-24 17:19:49,253 basehttp 7288 16532 "GET / HTTP/1.1" 500 178643
+INFO 2025-06-24 17:21:49,565 autoreload 15600 18340 Watching for file changes with StatReloader
+INFO 2025-06-24 17:21:53,392 basehttp 15600 17088 "GET / HTTP/1.1" 200 23158
+INFO 2025-06-24 17:22:01,637 basehttp 15600 17088 "GET / HTTP/1.1" 200 23158
+INFO 2025-06-24 17:22:04,359 basehttp 15600 17088 "GET / HTTP/1.1" 200 23158
+INFO 2025-06-24 17:22:07,714 basehttp 15600 17088 "GET / HTTP/1.1" 200 23158
+INFO 2025-06-24 17:22:09,597 basehttp 15600 17088 "GET /about/ HTTP/1.1" 200 20101
+INFO 2025-06-24 17:22:18,081 basehttp 15600 17088 "GET /about/ HTTP/1.1" 200 20101
+INFO 2025-06-24 17:22:21,650 basehttp 15600 17088 "GET /products/ HTTP/1.1" 200 31114
+WARNING 2025-06-24 17:22:21,780 log 15600 17088 Not Found: /products/images/russet.jpg
+WARNING 2025-06-24 17:22:21,783 log 15600 18168 Not Found: /products/images/red.jpg
+WARNING 2025-06-24 17:22:21,784 basehttp 15600 17088 "GET /products/images/russet.jpg HTTP/1.1" 404 3389
+WARNING 2025-06-24 17:22:21,791 log 15600 1932 Not Found: /products/images/fingerling.jpg
+WARNING 2025-06-24 17:22:21,797 log 15600 7760 Not Found: /products/images/sweet.jpg
+WARNING 2025-06-24 17:22:21,801 log 15600 6660 Not Found: /products/images/yukon.jpg
+WARNING 2025-06-24 17:22:21,801 basehttp 15600 18168 "GET /products/images/red.jpg HTTP/1.1" 404 3380
+WARNING 2025-06-24 17:22:21,809 basehttp 15600 1932 "GET /products/images/fingerling.jpg HTTP/1.1" 404 3401
+WARNING 2025-06-24 17:22:21,812 basehttp 15600 7760 "GET /products/images/sweet.jpg HTTP/1.1" 404 3386
+WARNING 2025-06-24 17:22:21,812 basehttp 15600 6660 "GET /products/images/yukon.jpg HTTP/1.1" 404 3386
+INFO 2025-06-24 17:22:29,260 basehttp 15600 6660 "GET /services/ HTTP/1.1" 200 20243
+INFO 2025-06-24 17:22:48,251 basehttp 15600 6660 "GET /contact/ HTTP/1.1" 200 20858
+INFO 2025-06-24 17:22:51,594 basehttp 15600 6660 "GET /contact/ HTTP/1.1" 200 20858
+INFO 2025-06-24 17:22:53,953 basehttp 15600 6660 "GET /contact/ HTTP/1.1" 200 20858
+INFO 2025-06-24 17:23:20,338 basehttp 15600 6660 "GET / HTTP/1.1" 200 23158
+INFO 2025-06-24 17:23:28,156 basehttp 15600 6660 "GET /about/ HTTP/1.1" 200 20101
+INFO 2025-06-24 17:30:35,736 basehttp 15600 1512 "GET / HTTP/1.1" 200 33504
+INFO 2025-06-24 17:31:49,656 basehttp 15600 1512 "GET / HTTP/1.1" 200 33504
+INFO 2025-06-24 17:55:25,801 autoreload 3144 11316 Watching for file changes with StatReloader
+INFO 2025-06-24 17:55:27,638 basehttp 3144 4984 "GET / HTTP/1.1" 200 33504
+INFO 2025-06-24 17:59:49,199 basehttp 3144 14452 "GET / HTTP/1.1" 200 33505
+INFO 2025-06-24 17:59:53,075 basehttp 3144 14452 "GET /products HTTP/1.1" 301 0
+INFO 2025-06-24 17:59:53,186 basehttp 3144 2156 "GET /products/ HTTP/1.1" 200 31114
+WARNING 2025-06-24 17:59:53,280 log 3144 2156 Not Found: /products/images/russet.jpg
+WARNING 2025-06-24 17:59:53,284 basehttp 3144 2156 "GET /products/images/russet.jpg HTTP/1.1" 404 3389
+WARNING 2025-06-24 17:59:53,291 log 3144 12492 Not Found: /products/images/red.jpg
+WARNING 2025-06-24 17:59:53,295 basehttp 3144 12492 "GET /products/images/red.jpg HTTP/1.1" 404 3380
+WARNING 2025-06-24 17:59:53,348 log 3144 12492 Not Found: /products/images/yukon.jpg
+WARNING 2025-06-24 17:59:53,350 basehttp 3144 12492 "GET /products/images/yukon.jpg HTTP/1.1" 404 3386
+WARNING 2025-06-24 17:59:53,358 log 3144 10028 Not Found: /products/images/sweet.jpg
+WARNING 2025-06-24 17:59:53,360 log 3144 2156 Not Found: /products/images/fingerling.jpg
+WARNING 2025-06-24 17:59:53,362 basehttp 3144 10028 "GET /products/images/sweet.jpg HTTP/1.1" 404 3386
+WARNING 2025-06-24 17:59:53,363 basehttp 3144 2156 "GET /products/images/fingerling.jpg HTTP/1.1" 404 3401
+INFO 2025-06-28 18:13:55,861 autoreload 11956 11984 Watching for file changes with StatReloader
+INFO 2025-06-28 18:14:01,052 basehttp 11956 11904 "GET / HTTP/1.1" 200 33505
+WARNING 2025-06-28 18:14:07,432 log 11956 13368 Not Found: /favicon.ico
+WARNING 2025-06-28 18:14:07,438 basehttp 11956 13368 "GET /favicon.ico HTTP/1.1" 404 3344
+INFO 2025-06-28 18:14:20,370 basehttp 11956 10632 "GET /products/ HTTP/1.1" 200 31114
+WARNING 2025-06-28 18:14:20,955 log 11956 10632 Not Found: /products/images/red.jpg
+WARNING 2025-06-28 18:14:21,002 log 11956 13080 Not Found: /products/images/russet.jpg
+WARNING 2025-06-28 18:14:21,002 basehttp 11956 10632 "GET /products/images/red.jpg HTTP/1.1" 404 3380
+WARNING 2025-06-28 18:14:21,069 basehttp 11956 13080 "GET /products/images/russet.jpg HTTP/1.1" 404 3389
+WARNING 2025-06-28 18:14:21,153 log 11956 10632 Not Found: /products/images/yukon.jpg
+WARNING 2025-06-28 18:14:21,328 log 11956 13080 Not Found: /products/images/fingerling.jpg
+WARNING 2025-06-28 18:14:21,562 basehttp 11956 10632 "GET /products/images/yukon.jpg HTTP/1.1" 404 3386
+WARNING 2025-06-28 18:14:21,575 log 11956 13252 Not Found: /products/images/sweet.jpg
+WARNING 2025-06-28 18:14:21,645 basehttp 11956 13080 "GET /products/images/fingerling.jpg HTTP/1.1" 404 3401
+WARNING 2025-06-28 18:14:21,757 basehttp 11956 13252 "GET /products/images/sweet.jpg HTTP/1.1" 404 3386
+INFO 2025-06-28 18:14:28,039 basehttp 11956 13252 "GET /products/ HTTP/1.1" 200 31114
+WARNING 2025-06-28 18:14:28,110 log 11956 13252 Not Found: /products/images/russet.jpg
+WARNING 2025-06-28 18:14:28,119 basehttp 11956 13252 "GET /products/images/russet.jpg HTTP/1.1" 404 3389
+WARNING 2025-06-28 18:14:28,173 log 11956 10632 Not Found: /products/images/yukon.jpg
+WARNING 2025-06-28 18:14:28,184 log 11956 7468 Not Found: /products/images/fingerling.jpg
+WARNING 2025-06-28 18:14:28,185 basehttp 11956 10632 "GET /products/images/yukon.jpg HTTP/1.1" 404 3386
+WARNING 2025-06-28 18:14:28,190 basehttp 11956 7468 "GET /products/images/fingerling.jpg HTTP/1.1" 404 3401
+WARNING 2025-06-28 18:14:28,195 log 11956 13080 Not Found: /products/images/red.jpg
+WARNING 2025-06-28 18:14:28,198 log 11956 3300 Not Found: /products/images/sweet.jpg
+WARNING 2025-06-28 18:14:28,209 basehttp 11956 13080 "GET /products/images/red.jpg HTTP/1.1" 404 3380
+WARNING 2025-06-28 18:14:28,210 basehttp 11956 3300 "GET /products/images/sweet.jpg HTTP/1.1" 404 3386
+INFO 2025-06-28 18:14:30,765 basehttp 11956 3300 "GET /about/ HTTP/1.1" 200 20101
+INFO 2025-06-28 18:14:35,673 basehttp 11956 3300 "GET / HTTP/1.1" 200 33505
+INFO 2025-06-28 18:16:27,995 autoreload 1216 6424 Watching for file changes with StatReloader
+INFO 2025-06-28 18:16:32,935 basehttp 1216 11492 "GET / HTTP/1.1" 200 33505
+INFO 2025-06-28 18:16:40,073 basehttp 1216 11492 "GET /products/ HTTP/1.1" 200 31114
+WARNING 2025-06-28 18:16:40,175 log 1216 8708 Not Found: /products/images/red.jpg
+WARNING 2025-06-28 18:16:40,178 log 1216 11492 Not Found: /products/images/russet.jpg
+WARNING 2025-06-28 18:16:40,179 basehttp 1216 8708 "GET /products/images/red.jpg HTTP/1.1" 404 3380
+WARNING 2025-06-28 18:16:40,180 basehttp 1216 11492 "GET /products/images/russet.jpg HTTP/1.1" 404 3389
+WARNING 2025-06-28 18:16:40,229 log 1216 8708 Not Found: /products/images/fingerling.jpg
+WARNING 2025-06-28 18:16:40,232 basehttp 1216 8708 "GET /products/images/fingerling.jpg HTTP/1.1" 404 3401
+WARNING 2025-06-28 18:16:40,243 log 1216 11492 Not Found: /products/images/yukon.jpg
+WARNING 2025-06-28 18:16:40,264 basehttp 1216 11492 "GET /products/images/yukon.jpg HTTP/1.1" 404 3386
+WARNING 2025-06-28 18:16:40,277 log 1216 8708 Not Found: /products/images/sweet.jpg
+WARNING 2025-06-28 18:16:40,279 basehttp 1216 8708 "GET /products/images/sweet.jpg HTTP/1.1" 404 3386
+INFO 2025-06-28 18:16:48,051 basehttp 1216 8708 "GET /about/ HTTP/1.1" 200 20101
+INFO 2025-06-28 18:16:49,730 basehttp 1216 8708 "GET / HTTP/1.1" 200 33505
+INFO 2025-06-28 18:16:55,237 basehttp 1216 8708 "GET /products/ HTTP/1.1" 200 31114
+WARNING 2025-06-28 18:16:55,333 log 1216 8708 Not Found: /products/images/russet.jpg
+WARNING 2025-06-28 18:16:55,342 basehttp 1216 8708 "GET /products/images/russet.jpg HTTP/1.1" 404 3389
+WARNING 2025-06-28 18:16:55,345 log 1216 11492 Not Found: /products/images/red.jpg
+WARNING 2025-06-28 18:16:55,349 basehttp 1216 11492 "GET /products/images/red.jpg HTTP/1.1" 404 3380
+WARNING 2025-06-28 18:16:55,359 log 1216 13036 Not Found: /products/images/yukon.jpg
+WARNING 2025-06-28 18:16:55,379 basehttp 1216 13036 "GET /products/images/yukon.jpg HTTP/1.1" 404 3386
+WARNING 2025-06-28 18:16:55,381 log 1216 12708 Not Found: /products/images/fingerling.jpg
+WARNING 2025-06-28 18:16:55,390 log 1216 12536 Not Found: /products/images/sweet.jpg
+WARNING 2025-06-28 18:16:55,390 basehttp 1216 12708 "GET /products/images/fingerling.jpg HTTP/1.1" 404 3401
+WARNING 2025-06-28 18:16:55,391 basehttp 1216 12536 "GET /products/images/sweet.jpg HTTP/1.1" 404 3386
+INFO 2025-06-28 18:16:57,982 basehttp 1216 12536 "GET /services/ HTTP/1.1" 200 20243
+INFO 2025-06-28 18:17:02,421 basehttp 1216 12536 "GET /contact/ HTTP/1.1" 200 20858
+INFO 2025-06-28 18:17:05,279 basehttp 1216 12536 "GET /contact/ HTTP/1.1" 200 20858
+INFO 2025-06-28 18:17:06,888 basehttp 1216 12536 "GET /contact/ HTTP/1.1" 200 20858
+INFO 2025-06-28 18:17:08,606 basehttp 1216 12536 "GET /services/ HTTP/1.1" 200 20243
+INFO 2025-06-28 18:17:09,868 basehttp 1216 12536 "GET /contact/ HTTP/1.1" 200 20858
+INFO 2025-06-28 18:17:11,471 basehttp 1216 12536 "GET /contact/ HTTP/1.1" 200 20858
+INFO 2025-06-28 18:20:13,240 autoreload 13484 12648 Watching for file changes with StatReloader
+INFO 2025-06-28 18:20:14,854 basehttp 13484 944 "GET / HTTP/1.1" 200 33505
+WARNING 2025-06-28 18:20:22,767 log 13484 944 Not Found: /home
+WARNING 2025-06-28 18:20:22,767 basehttp 13484 944 "GET /home HTTP/1.1" 404 3323
+WARNING 2025-06-28 18:21:08,185 log 13484 944 Not Found: /home
+WARNING 2025-06-28 18:21:08,186 basehttp 13484 944 "GET /home HTTP/1.1" 404 3323
+WARNING 2025-06-28 18:21:10,936 log 13484 944 Not Found: /home
+WARNING 2025-06-28 18:21:10,936 basehttp 13484 944 "GET /home HTTP/1.1" 404 3323
+INFO 2025-06-28 18:21:47,683 autoreload 10356 6604 Watching for file changes with StatReloader
+INFO 2025-06-28 18:21:53,125 basehttp 10356 9452 "GET / HTTP/1.1" 200 33505
+INFO 2025-06-28 18:22:04,045 basehttp 10356 9452 "GET /products/ HTTP/1.1" 200 30937
+WARNING 2025-06-28 18:22:04,154 log 10356 9452 Not Found: /products/images/russet.jpg
+WARNING 2025-06-28 18:22:04,158 log 10356 3568 Not Found: /products/images/red.jpg
+WARNING 2025-06-28 18:22:04,162 basehttp 10356 9452 "GET /products/images/russet.jpg HTTP/1.1" 404 3389
+WARNING 2025-06-28 18:22:04,162 basehttp 10356 3568 "GET /products/images/red.jpg HTTP/1.1" 404 3380
+WARNING 2025-06-28 18:22:04,212 log 10356 3568 Not Found: /products/images/yukon.jpg
+WARNING 2025-06-28 18:22:04,215 log 10356 9452 Not Found: /products/images/fingerling.jpg
+WARNING 2025-06-28 18:22:04,225 basehttp 10356 3568 "GET /products/images/yukon.jpg HTTP/1.1" 404 3386
+WARNING 2025-06-28 18:22:04,232 basehttp 10356 9452 "GET /products/images/fingerling.jpg HTTP/1.1" 404 3401
+WARNING 2025-06-28 18:22:04,262 log 10356 9452 Not Found: /products/images/sweet.jpg
+WARNING 2025-06-28 18:22:04,262 basehttp 10356 9452 "GET /products/images/sweet.jpg HTTP/1.1" 404 3386
+INFO 2025-06-28 18:22:06,177 basehttp 10356 9452 "GET / HTTP/1.1" 200 33505
+INFO 2025-06-28 18:22:07,524 basehttp 10356 9452 "GET /products/ HTTP/1.1" 200 30937
+WARNING 2025-06-28 18:22:07,626 log 10356 9452 Not Found: /products/images/russet.jpg
+WARNING 2025-06-28 18:22:07,631 log 10356 3568 Not Found: /products/images/red.jpg
+WARNING 2025-06-28 18:22:07,631 basehttp 10356 9452 "GET /products/images/russet.jpg HTTP/1.1" 404 3389
+WARNING 2025-06-28 18:22:07,637 basehttp 10356 3568 "GET /products/images/red.jpg HTTP/1.1" 404 3380
+WARNING 2025-06-28 18:22:07,650 log 10356 13032 Not Found: /products/images/yukon.jpg
+WARNING 2025-06-28 18:22:07,653 log 10356 11500 Not Found: /products/images/fingerling.jpg
+WARNING 2025-06-28 18:22:07,655 basehttp 10356 13032 "GET /products/images/yukon.jpg HTTP/1.1" 404 3386
+WARNING 2025-06-28 18:22:07,658 log 10356 11060 Not Found: /products/images/sweet.jpg
+WARNING 2025-06-28 18:22:07,659 basehttp 10356 11500 "GET /products/images/fingerling.jpg HTTP/1.1" 404 3401
+WARNING 2025-06-28 18:22:07,660 basehttp 10356 11060 "GET /products/images/sweet.jpg HTTP/1.1" 404 3386
+INFO 2025-06-28 18:22:10,717 basehttp 10356 11060 "GET / HTTP/1.1" 200 33505
+INFO 2025-06-28 18:23:01,165 basehttp 10356 11060 "GET /products/ HTTP/1.1" 200 30937
+WARNING 2025-06-28 18:23:01,278 log 10356 11500 Not Found: /products/images/red.jpg
+WARNING 2025-06-28 18:23:01,279 log 10356 11060 Not Found: /products/images/russet.jpg
+WARNING 2025-06-28 18:23:01,280 basehttp 10356 11500 "GET /products/images/red.jpg HTTP/1.1" 404 3380
+WARNING 2025-06-28 18:23:01,280 basehttp 10356 11060 "GET /products/images/russet.jpg HTTP/1.1" 404 3389
+WARNING 2025-06-28 18:23:01,312 log 10356 11060 Not Found: /products/images/yukon.jpg
+WARNING 2025-06-28 18:23:01,328 basehttp 10356 11060 "GET /products/images/yukon.jpg HTTP/1.1" 404 3386
+WARNING 2025-06-28 18:23:01,333 log 10356 11500 Not Found: /products/images/fingerling.jpg
+WARNING 2025-06-28 18:23:01,360 basehttp 10356 11500 "GET /products/images/fingerling.jpg HTTP/1.1" 404 3401
+WARNING 2025-06-28 18:23:01,381 log 10356 11500 Not Found: /products/images/sweet.jpg
+WARNING 2025-06-28 18:23:01,383 basehttp 10356 11500 "GET /products/images/sweet.jpg HTTP/1.1" 404 3386
+INFO 2025-06-28 18:23:04,007 basehttp 10356 11500 "GET /contact/ HTTP/1.1" 200 20681
+INFO 2025-06-28 18:23:05,365 basehttp 10356 11500 "GET /services/ HTTP/1.1" 200 20066
+INFO 2025-06-28 18:47:10,711 basehttp 10356 5932 "GET /about/ HTTP/1.1" 200 19924
+INFO 2025-06-28 18:48:31,327 basehttp 10356 5932 "GET / HTTP/1.1" 200 33505
+INFO 2025-06-28 18:48:44,293 autoreload 10816 13776 Watching for file changes with StatReloader
+INFO 2025-06-28 18:48:46,006 basehttp 10816 8172 "GET / HTTP/1.1" 200 33505
+INFO 2025-06-28 18:50:50,288 autoreload 12364 2296 Watching for file changes with StatReloader
+INFO 2025-06-28 18:50:59,873 basehttp 12364 9724 "GET / HTTP/1.1" 200 33619
+INFO 2025-06-28 18:51:36,992 autoreload 3936 3540 Watching for file changes with StatReloader
+INFO 2025-06-28 18:51:40,470 basehttp 3936 11356 "GET / HTTP/1.1" 200 33619
+INFO 2025-06-28 18:51:43,643 basehttp 3936 11356 "GET /services HTTP/1.1" 301 0
+INFO 2025-06-28 18:51:43,699 basehttp 3936 12452 "GET /services/ HTTP/1.1" 200 20066
+INFO 2025-06-28 18:51:47,131 basehttp 3936 12452 "GET /about/ HTTP/1.1" 200 19924
+INFO 2025-06-28 18:51:55,776 basehttp 3936 12452 "GET /services/ HTTP/1.1" 200 20066
+INFO 2025-06-28 18:52:03,309 basehttp 3936 12452 "GET /about/ HTTP/1.1" 200 19924
+INFO 2025-06-28 18:52:34,038 basehttp 3936 12452 "GET / HTTP/1.1" 200 33619
+INFO 2025-06-28 18:53:41,087 basehttp 3936 12452 "GET / HTTP/1.1" 200 33619
+INFO 2025-06-28 18:55:53,909 basehttp 3936 12452 "GET /services/ HTTP/1.1" 200 20066
+INFO 2025-06-28 18:55:57,444 basehttp 3936 12452 "GET /products/ HTTP/1.1" 200 30937
+WARNING 2025-06-28 18:55:57,553 log 3936 8720 Not Found: /products/images/red.jpg
+WARNING 2025-06-28 18:55:57,553 log 3936 12452 Not Found: /products/images/russet.jpg
+WARNING 2025-06-28 18:55:57,560 basehttp 3936 8720 "GET /products/images/red.jpg HTTP/1.1" 404 3380
+WARNING 2025-06-28 18:55:57,566 log 3936 10196 Not Found: /products/images/sweet.jpg
+WARNING 2025-06-28 18:55:57,567 basehttp 3936 12452 "GET /products/images/russet.jpg HTTP/1.1" 404 3389
+WARNING 2025-06-28 18:55:57,570 log 3936 9516 Not Found: /products/images/fingerling.jpg
+WARNING 2025-06-28 18:55:57,581 log 3936 7704 Not Found: /products/images/yukon.jpg
+WARNING 2025-06-28 18:55:57,581 basehttp 3936 10196 "GET /products/images/sweet.jpg HTTP/1.1" 404 3386
+WARNING 2025-06-28 18:55:57,586 basehttp 3936 9516 "GET /products/images/fingerling.jpg HTTP/1.1" 404 3401
+WARNING 2025-06-28 18:55:57,587 basehttp 3936 7704 "GET /products/images/yukon.jpg HTTP/1.1" 404 3386
+INFO 2025-06-28 18:55:59,361 basehttp 3936 7704 "GET /about/ HTTP/1.1" 200 19924
+INFO 2025-06-28 18:56:32,914 autoreload 7512 5888 Watching for file changes with StatReloader
+INFO 2025-06-28 18:56:37,143 basehttp 7512 2096 "GET / HTTP/1.1" 200 33619
+INFO 2025-06-28 18:57:01,957 basehttp 7512 2096 "GET /about HTTP/1.1" 301 0
+INFO 2025-06-28 18:57:01,996 basehttp 7512 7400 "GET /about/ HTTP/1.1" 200 19924
+INFO 2025-06-28 18:57:07,218 basehttp 7512 7400 "GET / HTTP/1.1" 200 33619
+INFO 2025-06-28 18:57:15,352 basehttp 7512 7400 "GET /about/ HTTP/1.1" 200 19924
+INFO 2025-06-28 18:57:19,251 basehttp 7512 7400 "GET /products/ HTTP/1.1" 200 30937
+WARNING 2025-06-28 18:57:19,308 log 7512 7400 Not Found: /products/images/russet.jpg
+WARNING 2025-06-28 18:57:19,308 basehttp 7512 7400 "GET /products/images/russet.jpg HTTP/1.1" 404 3389
+WARNING 2025-06-28 18:57:19,342 log 7512 13576 Not Found: /products/images/red.jpg
+WARNING 2025-06-28 18:57:19,353 basehttp 7512 13576 "GET /products/images/red.jpg HTTP/1.1" 404 3380
+WARNING 2025-06-28 18:57:19,355 log 7512 4036 Not Found: /products/images/yukon.jpg
+WARNING 2025-06-28 18:57:19,361 basehttp 7512 4036 "GET /products/images/yukon.jpg HTTP/1.1" 404 3386
+WARNING 2025-06-28 18:57:19,364 log 7512 6708 Not Found: /products/images/sweet.jpg
+WARNING 2025-06-28 18:57:19,365 log 7512 9552 Not Found: /products/images/fingerling.jpg
+WARNING 2025-06-28 18:57:19,366 basehttp 7512 9552 "GET /products/images/fingerling.jpg HTTP/1.1" 404 3401
+WARNING 2025-06-28 18:57:19,366 basehttp 7512 6708 "GET /products/images/sweet.jpg HTTP/1.1" 404 3386
+INFO 2025-06-28 18:57:22,480 basehttp 7512 6708 "GET /services/ HTTP/1.1" 200 20066
+INFO 2025-06-28 18:57:24,507 basehttp 7512 6708 "GET / HTTP/1.1" 200 33619
+INFO 2025-06-28 18:57:25,784 basehttp 7512 6708 "GET /products/ HTTP/1.1" 200 30937
+WARNING 2025-06-28 18:57:25,856 log 7512 6708 Not Found: /products/images/russet.jpg
+WARNING 2025-06-28 18:57:25,869 basehttp 7512 6708 "GET /products/images/russet.jpg HTTP/1.1" 404 3389
+WARNING 2025-06-28 18:57:25,901 log 7512 7400 Not Found: /products/images/sweet.jpg
+WARNING 2025-06-28 18:57:25,903 log 7512 4036 Not Found: /products/images/yukon.jpg
+WARNING 2025-06-28 18:57:25,905 log 7512 13576 Not Found: /products/images/fingerling.jpg
+WARNING 2025-06-28 18:57:25,905 basehttp 7512 7400 "GET /products/images/sweet.jpg HTTP/1.1" 404 3386
+WARNING 2025-06-28 18:57:25,906 basehttp 7512 4036 "GET /products/images/yukon.jpg HTTP/1.1" 404 3386
+WARNING 2025-06-28 18:57:25,912 basehttp 7512 13576 "GET /products/images/fingerling.jpg HTTP/1.1" 404 3401
+WARNING 2025-06-28 18:57:25,917 log 7512 9552 Not Found: /products/images/red.jpg
+WARNING 2025-06-28 18:57:25,934 basehttp 7512 9552 "GET /products/images/red.jpg HTTP/1.1" 404 3380
+INFO 2025-06-28 18:57:27,242 basehttp 7512 9552 "GET / HTTP/1.1" 200 33619
+INFO 2025-06-28 18:57:28,702 basehttp 7512 9552 "GET /services/ HTTP/1.1" 200 20066
+INFO 2025-06-28 18:57:30,201 basehttp 7512 9552 "GET / HTTP/1.1" 200 33619
+INFO 2025-06-28 18:57:32,285 basehttp 7512 9552 "GET /contact HTTP/1.1" 301 0
+INFO 2025-06-28 18:57:32,314 basehttp 7512 13576 "GET /contact/ HTTP/1.1" 200 20681
+INFO 2025-07-04 18:14:53,198 autoreload 8608 12688 Watching for file changes with StatReloader
+INFO 2025-07-04 18:15:00,640 basehttp 8608 1672 "GET / HTTP/1.1" 200 33619
+WARNING 2025-07-04 18:15:02,769 log 8608 12200 Not Found: /favicon.ico
+WARNING 2025-07-04 18:15:02,769 basehttp 8608 12200 "GET /favicon.ico HTTP/1.1" 404 3344
+INFO 2025-07-04 18:15:07,645 basehttp 8608 8928 "GET /about/ HTTP/1.1" 200 19924
+INFO 2025-07-04 18:15:10,211 basehttp 8608 8928 "GET / HTTP/1.1" 200 33619
+INFO 2025-07-04 18:15:11,870 basehttp 8608 8928 "GET /about/ HTTP/1.1" 200 19924
+INFO 2025-07-04 18:15:14,077 basehttp 8608 8928 "GET /products/ HTTP/1.1" 200 30937
+WARNING 2025-07-04 18:15:14,165 log 8608 8928 Not Found: /products/images/russet.jpg
+WARNING 2025-07-04 18:15:14,168 log 8608 12784 Not Found: /products/images/yukon.jpg
+WARNING 2025-07-04 18:15:14,173 basehttp 8608 8928 "GET /products/images/russet.jpg HTTP/1.1" 404 3389
+WARNING 2025-07-04 18:15:14,197 log 8608 3360 Not Found: /products/images/fingerling.jpg
+WARNING 2025-07-04 18:15:14,205 basehttp 8608 12784 "GET /products/images/yukon.jpg HTTP/1.1" 404 3386
+WARNING 2025-07-04 18:15:14,225 basehttp 8608 3360 "GET /products/images/fingerling.jpg HTTP/1.1" 404 3401
+WARNING 2025-07-04 18:15:14,256 log 8608 3404 Not Found: /products/images/sweet.jpg
+WARNING 2025-07-04 18:15:14,270 log 8608 4964 Not Found: /products/images/red.jpg
+WARNING 2025-07-04 18:15:14,289 basehttp 8608 3404 "GET /products/images/sweet.jpg HTTP/1.1" 404 3386
+WARNING 2025-07-04 18:15:14,290 basehttp 8608 4964 "GET /products/images/red.jpg HTTP/1.1" 404 3380
+INFO 2025-07-04 18:15:18,168 basehttp 8608 4964 "GET /services/ HTTP/1.1" 200 20066
+INFO 2025-07-04 18:15:27,433 basehttp 8608 4964 "GET /contact/ HTTP/1.1" 200 20681
