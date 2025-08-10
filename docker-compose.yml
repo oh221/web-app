@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+      - ./db.sqlite3:/app/db.sqlite3  # Mount SQLite database
+      - ./media:/app/media  # Mount media files
+      - ./logs:/app/logs  # Mount logs directory
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=django-insecure-3qv@czw8^l7$ar)ktpb=k!e2f)2pxhx=tz%f)67c8c)c67+z(j
+      - ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0,.potatocompany.com
