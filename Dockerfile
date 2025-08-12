@@ -37,3 +37,23 @@ EXPOSE 8000
 
 # Run the application
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Use the same base image you had
+FROM python:3.10-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Copy requirements first (to use Docker layer caching)
+COPY requirements.txt .
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the application
+COPY . .
+
+# Expose the port the app runs on
+EXPOSE 8000
+
+# Start the server (Django example)
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
