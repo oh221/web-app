@@ -2,16 +2,8 @@ pipeline {
     agent any
 
     environment {
-        // Docker Hub credentials (configure in Jenkins)
-        DOCKERHUB_CREDENTIALS = 'dockerhub-credentials'
-        DOCKER_IMAGE = 'omarh120/web-app'
-        LATEST_TAG = 'latest'
-    }
-
-    options {
-        buildDiscarder(logRotator(numToKeepStr: '10'))
-        timeout(time: 30, unit: 'MINUTES')
-        timestamps()
+        DOCKERHUB_REPO = "omarh120/web-app"
+        IMAGE_TAG = "latest"
     }
 
     stages {
@@ -23,34 +15,48 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'pip install -r requirements.txt'
+                sh '''
+                    python3 -m venv venv
+                    . venv/bin/activate
+                    pip install --upgrade pip
+                    pip install -r requirements.txt
+                '''
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'python manage.py test'
+                sh '''
+                    . venv/bin/activate
+                    python manage.py test
+                '''
             }
         }
 
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build("${DOCKER_IMAGE}:${BUILD_NUMBER}")
+                    docker.build("${DOCKERHUB_REPO}:${IMAGE_TAG}")
                 }
             }
         }
 
-        stage('Push to Docker Hub') {
+        stage('Push to DockerHub') {
             steps {
-                withCredentials([usernamePassword(credentialsId: "${DOCKERHUB_CREDENTIALS}", usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                    sh """
-                        echo $PASSWORD | docker login -u $USERNAME --password-stdin
-                        docker tag ${DOCKER_IMAGE}:${BUILD_NUMBER} ${DOCKER_IMAGE}:${LATEST_TAG}
-                        docker push ${DOCKER_IMAGE}:${BUILD_NUMBER}
-                        docker push ${DOCKER_IMAGE}:${LATEST_TAG}
-                    """
+                withDockerRegistry([ credentialsId: 'docker-hub-creds', url: '' ]) {
+                    script {
+                        docker.image("${DOCKERHUB_REPO}:${IMAGE_TAG}").push()
+                    }
                 }
+            }
+        }
+
+        stage('Deploy Container') {
+            steps {
+                sh '''
+                    docker rm -f django_web || true
+                    docker run -d --name django_web -p 8000:8000 ${DOCKERHUB_REPO}:${IMAGE_TAG}
+                '''
             }
         }
     }
