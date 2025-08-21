@@ -9,26 +9,34 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
-      - ./db.sqlite3:/app/db.sqlite3  # Mount SQLite database
-      - ./media:/app/media  # Mount media files
-      - ./logs:/app/logs  # Mount logs directory
-      - ./staticfiles:/app/staticfiles  # Mount static files
+      - ./db.sqlite3:/app/db.sqlite3
+      - ./media:/app/media
+      - ./logs:/app/logs
+      - ./staticfiles:/app/staticfiles
     ports:
       - "8000:8000"
     environment:
-      - DEBUG=1
-      - SECRET_KEY=django-insecure-3qv@czw8^l7$ar)ktpb=k!e2f)2pxhx=tz%f)67c8c)c67+z(j
-      - ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0,*.potatocompany.com
-      - PYTHONUNBUFFERED=1
+      DEBUG: "1"
+      SECRET_KEY: "django-insecure-..."
+      ALLOWED_HOSTS: "localhost,127.0.0.1,0.0.0.0,*.potatocompany.com"
+      PYTHONUNBUFFERED: "1"
     restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 40s
 
-# Optional: Add a reverse proxy for production
+  jenkins:
+    build:
+      context: ./jenkins   # we’ll create a custom Jenkins Dockerfile here
+      dockerfile: Dockerfile
+    container_name: jenkins-server
+    user: root
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - .:/workspace   # mount your app code inside Jenkins
+    restart: unless-stopped
+
   nginx:
     image: nginx:alpine
     container_name: nginx-proxy
@@ -43,6 +51,9 @@ services:
     restart: unless-stopped
     profiles:
       - production
+
+volumes:
+  jenkins_home:
 
 networks:
   default:
