@@ -35,8 +35,13 @@ RUN curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /
 RUN curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
     && chmod +x /usr/local/bin/docker-compose
 
-# Install common Python packages for CI/CD
-RUN pip3 install --no-cache-dir \
+# Create a virtual environment for Python packages
+RUN python3 -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Install common Python packages for CI/CD in the virtual environment
+RUN pip install --no-cache-dir --upgrade pip \
+    && pip install --no-cache-dir \
     virtualenv \
     pytest \
     flake8 \
@@ -52,6 +57,9 @@ RUN usermod -aG docker jenkins
 
 # Create workspace directory with proper permissions
 RUN mkdir -p /workspace && chown -R jenkins:jenkins /workspace
+
+# Make virtual environment accessible to jenkins user
+RUN chown -R jenkins:jenkins /opt/venv
 
 # Switch back to Jenkins user
 USER jenkins
