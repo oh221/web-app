@@ -1,5 +1,4 @@
-version: '3.8'
-
+# Remove the obsolete version line
 services:
   web:
     build: 
@@ -17,14 +16,14 @@ services:
       - "8000:8000"
     environment:
       DEBUG: "1"
-      SECRET_KEY: "django-insecure-..."
+      SECRET_KEY: "django-insecure-change-this-in-production"
       ALLOWED_HOSTS: "localhost,127.0.0.1,0.0.0.0,*.potatocompany.com"
       PYTHONUNBUFFERED: "1"
     restart: unless-stopped
 
   jenkins:
     build:
-      context: ./jenkins   # we’ll create a custom Jenkins Dockerfile here
+      context: ./jenkins   # we'll create a custom Jenkins Dockerfile here
       dockerfile: Dockerfile
     container_name: jenkins-server
     user: root
@@ -36,6 +35,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - .:/workspace   # mount your app code inside Jenkins
     restart: unless-stopped
+    depends_on:
+      - web
 
   nginx:
     image: nginx:alpine
